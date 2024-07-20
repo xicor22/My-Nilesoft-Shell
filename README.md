@@ -8,6 +8,16 @@ Version 1.9.15
 
 ## Screenshots
 
+### File:
+<img src="file.png" />
+### Folder:
+<img src="folder.png"/>
+### Drive:
+<img src="drive.png"/>
+### Taskbar:
+<img src="taskbar.png"/>
+
+
 ## Features:
 
 - Moved most of the cluttered options to the default menu for easy access
