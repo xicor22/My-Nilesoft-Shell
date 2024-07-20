@@ -1,7 +1,5 @@
 # Config files for [Nilesoft Shell](https://github.com/moudey/Shell)
 
-Version 1.9.15
-
 > [!IMPORTANT]
 > The archive funtion uses [7zip](https://www.7-zip.org/download.html).
 > _Make sure to add the 7zip directory to the path_
