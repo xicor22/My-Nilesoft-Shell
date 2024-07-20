@@ -8,15 +8,13 @@ Version 1.9.15
 
 ## Screenshots
 
-### File:
-<img src="file.png" />
-### Folder:
-<img src="folder.png"/>
-### Drive:
-<img src="drive.png"/>
-### Taskbar:
-<img src="taskbar.png"/>
+| File  | Folder |
+| ------------- | ------------- |
+| <img src="file.png" />  | <img src="folder.png"/>  |
 
+| Drive  | Taskbar |
+| ------------- | ------------- |
+| <img src="drive.png"/>  | <img src="taskbar.png"/>  |
 
 ## Features:
 
