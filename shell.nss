@@ -38,6 +38,8 @@ $has_admin=key.shift() or key.rbutton()
 
 item(title='Powershell' image=\ue218 admin=has_admin tip=tip_run_admin cmd='pwsh.exe' args='-noexit -command "Set-Location @sel.dir\"')
 
+//Removed items
+//Tried removing items from the Win+x menu but they are still there for some reason
 remove(find='Personalize')
 remove(find='Display settings')
 remove(find='Terminal')
