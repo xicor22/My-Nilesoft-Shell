@@ -18,7 +18,8 @@
 
 - Moved most of the cluttered options to the default menu for easy access
 - Removed many options that are never used by most users
-- Added single click archive option (works with both file(s) and folder(s)
+- Added single click archive option (works with both file(s) and folder(s))
+- Added single click unarchive option 
 - Uses [catppuccin mocha](https://github.com/catppuccin/nilesoft-shell) theme
 - Added shortcuts to windows utilities with taskbar right click
 

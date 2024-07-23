@@ -1,22 +1,23 @@
 ﻿settings
 {
-    priority=1
-    exclude.where = !process.is_explorer
-    showdelay = 200
-    modify.remove.duplicate=1
-    tip.enabled=true
+	priority=1
+	exclude.where = !process.is_explorer
+	showdelay = 200
+	modify.remove.duplicate=1
+	tip.enabled=true
 }
 
 menu(separator="before" title='New File' image=icon.new_file)
 {
-    $dt = sys.datetime("ymdHMSs")
-    item(title='TXT' image=\ue230 cmd=io.file.create('Temp.txt', 'Hello World!'))
-    item(title='PY' image=\ue243 cmd=io.file.create('Temp.py', 'Print("Hello World!")'))		
+	$dt = sys.datetime("ymdHMSs")
+	item(title='TXT' image=\ue230 cmd=io.file.create('Temp.txt', 'Hello World!'))
+	item(title='PY' image=\ue243 cmd=io.file.create('Temp.py', 'Print("Hello World!")'))		
 }
 item(title='New Folder' image=icon.new_folder cmd=io.dir.create(" "))
 
 separator
 item(type='file' title='Archive' image=[\ue223] cmd='7z' args='a -tzip "archive.zip" @sel.name' window='hidden')
+item(type='file' find='.zip|.tar|.tar.gz|.tar.bz2|.rar|.7z|.gz|.bz2|.xz|.iso' title='Unarchive' image=[\ue173] cmd='7z' args='e @sel.name -y -o@sel.parent.raw' window='hidden')
 item(type='dir|back.dir' title='Archive' image=[\ue223] cmd='7z' args='a -tzip "archive.zip" @sel.directory' window='hidden')
 item(type='file|dir' where=sel.count>1 image=[\ue223] mode="multiple" title='Archive' cmd='7z' args='a -tzip "archive.zip" @sel(true, " ")' window='hidden' invoke=multiple)
 
@@ -27,7 +28,7 @@ separator
 item(title="Toggle Hidden" image=icon.show_hidden_files cmd='@command.togglehidden')
 
 item(type='file|dir|back.dir|drive' title='Take Ownership' image=[\uE194,#f00] admin
-    cmd args='/K takeown /f "@sel.path" @if(sel.type==1,null,"/r /d y") && icacls "@sel.path" /grant *S-1-5-32-544:F @if(sel.type==1,"/c /l","/t /c /l /q")')
+	cmd args='/K takeown /f "@sel.path" @if(sel.type==1,null,"/r /d y") && icacls "@sel.path" /grant *S-1-5-32-544:F @if(sel.type==1,"/c /l","/t /c /l /q")')
 separator
 
 //VS code and PowerShell
@@ -37,6 +38,9 @@ $tip_run_admin=["\xE1A7 Press SHIFT key to run " + this.title + " as administrat
 $has_admin=key.shift() or key.rbutton()
 
 item(title='Powershell' image=\ue218 admin=has_admin tip=tip_run_admin cmd='pwsh.exe' args='-noexit -command "Set-Location @sel.dir\"')
+
+//Modify Section
+// modify(find='vlc' image=[\ue153])
 
 //Removed items
 //Tried removing items from the Win+x menu but they are still there for some reason
@@ -76,7 +80,11 @@ remove(find='Include in library')
 remove(find='Pin to Start')
 remove(find='print')
 remove(find='Open PowerShell window here')
-// remove(find='')
+remove(find='Extract All')
+remove(find='Rotate')
+remove(find='Cast')
+remove(find='Desktop background')
+remove(find='vlc')
 // remove(find='')
 // remove(find='')
 // remove(find='')
