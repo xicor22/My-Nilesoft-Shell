@@ -1,19 +1,19 @@
 ﻿settings
 {
-    priority=1
-    exclude.where = !process.is_explorer
-    showdelay = 200
-    modify.remove.duplicate=1
-    tip.enabled=true
+	priority=1
+	exclude.where = !process.is_explorer
+	showdelay = 200
+	modify.remove.duplicate=1
+	tip.enabled=true
 }
 
 
 //NEW 
 menu(separator="before" title='New File' image=icon.new_file)
 {
-    $dt = sys.datetime("ymdHMSs")
-    item(title='TXT' image=\ue230 cmd=io.file.create('Temp.txt', 'Hello World!'))
-    item(title='PY' image=\ue243 cmd=io.file.create('Temp.py', 'Print("Hello World!")'))		
+	$dt = sys.datetime("ymdHMSs")
+	item(title='TXT' image=\ue230 cmd=io.file.create('Temp.txt', 'Hello World!'))
+	item(title='PY' image=\ue243 cmd=io.file.create('Temp.py', 'Print("Hello World!")'))		
 }
 item(title='New Folder' image=icon.new_folder cmd=io.dir.create(" "))
 
@@ -34,7 +34,7 @@ item(title="Toggle Hidden" image=icon.show_hidden_files cmd='@command.togglehidd
 
 //OWNERSHIP
 item(type='file|dir|back.dir|drive' title='Take Ownership' sep=after image=[\uE194,#f00] admin
-    cmd args='/K takeown /f "@sel.path" @if(sel.type==1,null,"/r /d y") && icacls "@sel.path" /grant *S-1-5-32-544:F @if(sel.type==1,"/c /l","/t /c /l /q")')
+	cmd args='/K takeown /f "@sel.path" @if(sel.type==1,null,"/r /d y") && icacls "@sel.path" /grant *S-1-5-32-544:F @if(sel.type==1,"/c /l","/t /c /l /q")')
 
 
 //VS CODE & POWERSHELL
