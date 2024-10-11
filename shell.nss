@@ -19,10 +19,10 @@ item(title='New Folder' image=icon.new_folder cmd=io.dir.create(" "))
 
 
 //ARCHIVE
-item(type='file' title='Archive' sep=before image=[\ue223] cmd='7z' args='a -tzip "archive.zip" @sel.name' window='hidden')
-item(type='file' find='.zip|.tar|.tar.gz|.tar.bz2|.rar|.7z|.gz|.bz2|.xz|.iso' admin=has_admin  tip=tip_run_admin title='Unarchive' image=[\ue173] cmd='7z' args='x @sel.name -y -o"@sel.parent.raw"' window='hidden')
-item(type='dir|back.dir' title='Archive' image=[\ue223] cmd='7z' args='a -tzip "archive.zip" @sel.directory' window='hidden')
-item(type='file|dir' where=sel.count>1 image=[\ue223] mode="multiple" title='Archive' cmd='7z' args='a -tzip "archive.zip" @sel(true, " ")' window='hidden' invoke=multiple)
+//item(type='file' title='Archive' sep=before image=[\ue223] cmd='7z' args='a -tzip "archive.zip" @sel.name' window='hidden')
+//item(type='file' find='.zip|.tar|.tar.gz|.tar.bz2|.rar|.7z|.gz|.bz2|.xz|.iso' admin=has_admin  tip=tip_run_admin title='Unarchive' image=[\ue173] cmd='7z' args='x @sel.name -y -o"@sel.parent.raw"' window='hidden')
+//item(type='dir|back.dir' title='Archive' image=[\ue223] cmd='7z' args='a -tzip "archive.zip" @sel.directory' window='hidden')
+//item(type='file|dir' where=sel.count>1 image=[\ue223] mode="multiple" title='Archive' cmd='7z' args='a -tzip "archive.zip" @sel(true, " ")' window='hidden' invoke=multiple)
 
 
 //COPY PATH
@@ -73,7 +73,7 @@ remove(find='available')
 remove(find='macrium')
 remove(find='autoplay')
 remove(find='bitlocker')
-remove(find='7-zip')
+remove(find='pdf')
 remove(find='edit')
 remove(find='customize this folder')
 remove(find='give access')
@@ -91,9 +91,9 @@ remove(find='Rotate')
 remove(find='Cast')
 remove(find='Desktop background')
 remove(find='vlc')
-// remove(find='')
-
-
+remove(find='git')
+remove(find='encrypt')
+remove(find='gpgex')
 //IMPORTS
 import 'imports/taskbar.nss'
 import 'imports/theme.nss'
